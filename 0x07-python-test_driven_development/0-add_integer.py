@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This is an integer additon function.
+It takes 2 arguments and return the results
+"""
 
 def add_integer(a, b):
     """Return the addition of two numbers."""
