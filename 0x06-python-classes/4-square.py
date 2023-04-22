@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # 4-square.py
-# Brennan D Baraban <375@holbertonschool.com>
 """Define a class Square."""
 
 
@@ -17,7 +16,7 @@ class Square:
 
     @property
     def size(self):
-        """Get/set the current size of the square."""
+        """Get and set the current size of the square."""
         return (self.__size)
 
     @size.setter
