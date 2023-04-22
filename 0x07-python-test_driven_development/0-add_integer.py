@@ -9,7 +9,7 @@ def add_integer(a, b):
     """Return the addition of two numbers."""
     if not isintance(a,(int, float)):
         raise TypeError("a must be an integer")
-    if not isinstance(b,(int, float)):
+    elif not isinstance(b,(int, float)):
         raise TypeError("b must be an integer")
     if type(a) is float:
         a = int(a)
