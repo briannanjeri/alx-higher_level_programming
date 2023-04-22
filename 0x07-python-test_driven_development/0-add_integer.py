@@ -7,12 +7,12 @@ The 0-add_integer module supplies one function, add_integer(a, b).
 
 def add_integer(a, b):
     """Return the addition of two numbers."""
-    if not isinstance(a,(int, float)):
+    if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
-    elif not isinstance(b,(int, float)):
+    if type(b) is not int and type(b) is not float:
         raise TypeError("b must be an integer")
-    if type(a) is float:
+    if isinstance(a,float):
         a = int(a)
-    if type(b) is float:
+    if isinstance(b,float):
         b = int(b)
     return a + b
