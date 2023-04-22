@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-#0-add_integer.py
 """
-This is an integer additon function.
-It takes 2 arguments and return the results
+This is the "0-add_integer" module.
+The 0-add_integer module supplies one function, add_integer(a, b).
 """
+
+
 def add_integer(a, b):
     """Return the addition of two numbers."""
     if type(a) is not int and type(a) is not float:
