@@ -10,9 +10,9 @@ def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
     count = 0
-    for a in text:
+    for c in text:
         if count == 0:
-            if a == ' ':
+            if c == ' ':
                 continue
             else:
                 count = 1
