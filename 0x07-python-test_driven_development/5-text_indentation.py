@@ -9,17 +9,17 @@ def text_indentation(text):
     """Adds a 2 new line character after "." "?" ":" """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    flag = 0
+    count = 0
     for a in text:
-        if flag == 0:
+        if count == 0:
             if a == ' ':
                 continue
             else:
-                flag = 1
-        if flag == 1:
-            if a == '?' or a == '.' or a == ':':
-                print(a)
+                count = 1
+        if count == 1:
+            if c == '?' or c == '.' or c == ':':
+                print(c)
                 print()
-                flag = 0
+                count = 0
             else:
-                print(a, end="")
+                print(c, end="")
