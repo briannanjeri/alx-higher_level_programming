@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-'''
-lists all states from the database hbtn_0e_0_usa
-'''
+"""
+This script retrieves all states from a MySQL database and prints them to the terminal.
+
+Usage: ./0-select_states.py <mysql username> <mysql password> <database name>
+"""
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
