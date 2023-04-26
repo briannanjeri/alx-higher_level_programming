@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""
-This script retrieves all states from a MySQL database and prints them to the terminal.
 
-Usage: ./0-select_states.py <mysql username> <mysql password> <database name>
-"""
 """
 Script that lists all states from the database hbtn_0e_0_usa
 """
