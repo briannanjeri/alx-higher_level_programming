@@ -4,32 +4,28 @@
 Script that lists all states from the database hbtn_0e_0_usa
 """
 
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.orm import Session
-from sqlalchemy.ext.declarative import declarative_base
 import MySQLdb
 import sys
 
-if __name__=="__main__":
-    Base=declarative_base()
-    engine=create_engine("mysql+mysqldb://{}:{}@localhost/{}".
-                         format(sys.argv[1], sys.argv[2], sys.argv[3]),pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-    session = Session(engine)
+# Connect to the MySQL database
+db = MySQLdb.connect(
+    host="localhost",
+    port=3306,
+    user=sys.argv[1],
+    passwd=sys.argv[2],
+    db=sys.argv[3]
+)
 
+# Create a cursor object
+cur = db.cursor()
 
- #define the state model   
-class State(Base):
-    __tablename__ = 'states'
-    id=Column(Integer, primary_key=True, nullable=False) 
-    name=Column(String(128), nullable=False)   
-#create a session to interact with database
+# Execute the query to retrieve all states from the database
+cur.execute("SELECT * FROM states ORDER BY id ASC")
 
-#query all states and print their names
-states=session.query(State).order_by(State.id.asc()).all()
+# Fetch all the rows and print them
+for row in cur.fetchall():
+    print(row)
 
-for state in states:
-    print("({}, '{}')".format(state.id, state.name))
-
-#close the session
-session.close()  
+# Close the cursor and database connection
+cur.close()
+db.close()
