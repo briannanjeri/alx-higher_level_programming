@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 1-square.py
-# Brennan D Baraban <375@holbertonschool.com>
+# nanjeri brian 0x06-python-classes
 """Define a class Square."""
 
 

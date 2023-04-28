@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # 6-square.py
-# Brennan D Baraban <375@holbertonschool.com>
 """Define a class Square."""
 
 
@@ -57,5 +56,5 @@ class Square:
         [print("") for i in range(0, self.__position[1])]
         for i in range(0, self.__size):
             [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
+            [print("#", end="") for j in range(0, self.__size)]
             print("")
