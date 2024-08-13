@@ -1,22 +1,26 @@
 #!/usr/bin/node
-// Computes the number of tasks completed by user id.
+
 const request = require('request');
 const url = process.argv[2];
 
-request(url, (error, response, body) => {
-  if (error) {
-    console.log(error);
-  }
-  const todoDict = JSON.parse(body);
-  const compDict = {};
-  for (const task of todoDict) {
-    if (task.completed) {
-      if (compDict[task.userId]) {
-        compDict[task.userId] += 1;
-      } else {
-        compDict[task.userId] = 1;
+request(url, function (err, response, body) {
+  if (err) {
+    console.log(err);
+  } else if (response.statusCode === 200) {
+    const completed = {};
+    const tasks = JSON.parse(body);
+    for (const i in tasks) {
+      const task = tasks[i];
+      if (task.completed === true) {
+        if (completed[task.userId] === undefined) {
+          completed[task.userId] = 1;
+        } else {
+          completed[task.userId]++;
+        }
       }
     }
+    console.log(completed);
+  } else {
+    console.log('An error occured. Status code: ' + response.statusCode);
   }
-  console.log(compDict);
 });
