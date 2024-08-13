@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-# 2-uniq_add.py
-
 
 
 def uniq_add(my_list=[]):
-    """Add all unique integers in a list (once for each integer)."""
+    """
+    A function that adds all unique
+    integers in a list (only once for each integer)
+    """
+    new_list = []
     sum = 0
-    for i in set(my_list):
-        sum += i
-    return (sum)
+    for num in my_list:
+        if num not in new_list:
+            sum += num
+            new_list.append(num)
+    return sum

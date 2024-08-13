@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-# 10-best_score.py
-# best_score
 
 
 def best_score(a_dictionary):
-    """Returns a key with the biggest integer value."""
-    if not isinstance(a_dictionary, dict) or len(a_dictionary) == 0:
-        return None
-
-    ret = list(a_dictionary.keys())[0]
-    big = a_dictionary[ret]
-    for k, v in a_dictionary.items():
-        if v > big:
-            big = v
-            ret = k
-    return (ret)
+    """
+    A function that returns a key with the biggest integer value.
+    """
+    if a_dictionary:
+        my_list = list(a_dictionary.keys())
+        score = 0
+        leader = ""
+        for i in my_list:
+            if a_dictionary[i] > score:
+                score = a_dictionary[i]
+                leader = i
+        return leader
